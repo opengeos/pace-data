@@ -35,7 +35,6 @@ username = "opengeos"
 repository = "pace-data"
 tag_name = "chla"
 release_id = leafmap.github_get_release_id_by_tag(username, repository, tag_name)
-leafmap.github_upload_asset_to_release(username, repository, release_id, "README.md")
 leafmap.github_upload_asset_to_release(username, repository, release_id, filename)
 leafmap.github_upload_asset_to_release(
     username, repository, release_id, "chla/chla_latest.tif"
