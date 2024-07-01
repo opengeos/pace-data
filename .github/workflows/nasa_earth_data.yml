@@ -11,7 +11,7 @@ jobs:
     env:
       EARTHDATA_USERNAME: ${{ secrets.EARTHDATA_USERNAME }}
       EARTHDATA_PASSWORD: ${{ secrets.EARTHDATA_PASSWORD }}
-      GITHUB_API_TOKEN: ${{ secrets.GITHUB_API_TOKEN }}
+      GITHUB_API_TOKEN: ${{ secrets.GT_API_TOKEN }}
 
     steps:
       - name: checkout repo content
