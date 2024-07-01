@@ -26,7 +26,7 @@ date = array.date.max().values.tolist()
 mean_array = array.mean(dim="date")
 
 filename = f"chla/chla_{date}.tif"
-hypercoast.pace_chla_to_image(array, filename)
+hypercoast.pace_chla_to_image(mean_array, filename)
 
 shutil.copy(filename, "chla/chla_latest.tif")
 print(f"Updated chla image: {filename}")
