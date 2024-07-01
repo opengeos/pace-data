@@ -26,9 +26,10 @@ date = array.date.max().values.tolist()
 mean_array = array.mean(dim="date")
 
 filename = f"chla/chla_{date}.tif"
+latest = "chla/latest.tif"
 hypercoast.pace_chla_to_image(mean_array, filename)
 
-shutil.copy(filename, "chla/chla_latest.tif")
+shutil.copy(filename, latest)
 print(f"Updated chla image: {filename}")
 
 username = "opengeos"
@@ -36,6 +37,4 @@ repository = "pace-data"
 tag_name = "chla"
 release_id = leafmap.github_get_release_id_by_tag(username, repository, tag_name)
 leafmap.github_upload_asset_to_release(username, repository, release_id, filename)
-leafmap.github_upload_asset_to_release(
-    username, repository, release_id, "chla/chla_latest.tif"
-)
+leafmap.github_upload_asset_to_release(username, repository, release_id, latest)
